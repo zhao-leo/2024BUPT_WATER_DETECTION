@@ -10,7 +10,7 @@ module water_detection(
     output [7:0] red_led,
     output [7:0] select,
     output beep,
-	 output dp
+	output dp
 );
     wire [3:0] key;
     wire [3:0] value;
