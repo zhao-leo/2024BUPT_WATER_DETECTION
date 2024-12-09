@@ -5,7 +5,8 @@ module led_matrix(//在8x8的led矩阵上显示动画，同时发出蜂鸣器声
     output [7:0] red_led,
     output [7:0] green_led,
     output [7:0] row,
-    output reg beeper
+    output reg beeper,
+    output reg [1:0] Anime_state
 
 );
     wire clk_div_r2;
@@ -57,7 +58,7 @@ module led_matrix(//在8x8的led矩阵上显示动画，同时发出蜂鸣器声
 
     reg [63:0] r_led;
     reg [63:0] g_led;
-    reg [1:0] Anime_state;
+
 
     initial begin
         beeper = 1'b0;

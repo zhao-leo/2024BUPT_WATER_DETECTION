@@ -16,7 +16,7 @@ module water_detection(
     wire [3:0] value;
     wire [7:0] number;
     wire [2:0] state;
-
+    wire [1:0] Anime_state;
 
     wire beeper;
     
@@ -37,7 +37,9 @@ led_disp led_disp1(
     .select(select),
     .segment7x(segment7),
     .number_out(number),
-	 .dp(dp)
+	.dp(dp),
+    .Anime_state(Anime_state),
+    .state(state)
 );
 controller controller1(
     .clk(clk),
@@ -52,7 +54,8 @@ led_matrix led_matrix1(
     .red_led(red_led),
     .green_led(green_led),
     .row(row),
-    .beeper(beeper)
+    .beeper(beeper),
+    .Anime_state(Anime_state)
 );
 beep beep1(
     .clk(clk),
